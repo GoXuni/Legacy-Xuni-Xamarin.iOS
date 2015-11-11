@@ -106,10 +106,10 @@
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
     <Reference Include="Xuni.iOS.Core">
-      <HintPath>..\packages\Xuni.iOS.Core.1.5.20152.50\lib\Xamarin.iOS10\Xuni.iOS.Core.dll</HintPath>
+      <HintPath>..\packages\Xuni.iOS.Core.1.5.20153.60\lib\Xamarin.iOS10\Xuni.iOS.Core.dll</HintPath>
     </Reference>
     <Reference Include="Xuni.iOS.Gauge">
-      <HintPath>..\packages\Xuni.iOS.Gauge.1.5.20152.50\lib\Xamarin.iOS10\Xuni.iOS.Gauge.dll</HintPath>
+      <HintPath>..\packages\Xuni.iOS.Gauge.1.5.20153.60\lib\Xamarin.iOS10\Xuni.iOS.Gauge.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

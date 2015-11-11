@@ -47,17 +47,17 @@ namespace GaugesSample
             linearGauge.ShowText = ShowText.ShowTextMinMax;
 
             // add ranges to the linear gauge
-            XuniGaugeRange range1 = new XuniGaugeRange();
+            XuniGaugeRange range1 = new XuniGaugeRange(linearGauge);
             range1.Min = 0;
             range1.Max = 30;
             range1.Color = UIColor.Red;
             linearGauge.Ranges.AddObject(range1);
-            XuniGaugeRange range2 = new XuniGaugeRange();
+            XuniGaugeRange range2 = new XuniGaugeRange(linearGauge);
             range2.Min = 30;
             range2.Max = 70;
             range2.Color = UIColor.Orange;
             linearGauge.Ranges.AddObject(range2);
-            XuniGaugeRange range3 = new XuniGaugeRange();
+            XuniGaugeRange range3 = new XuniGaugeRange(linearGauge);
             range3.Min = 70;
             range3.Max = 100;
             range3.Color = UIColor.Green;
@@ -93,7 +93,7 @@ namespace GaugesSample
             radialGauge.ShowRanges = true;
             radialGauge.BackgroundColor = UIColor.White;
 
-            XuniGaugeRange radialRange1 = new XuniGaugeRange();
+            XuniGaugeRange radialRange1 = new XuniGaugeRange(radialGauge);
             radialRange1.Min = 0.0;
             radialRange1.Max = 0.35;
             radialRange1.Color = UIColor.Orange;
