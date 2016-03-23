@@ -3,11 +3,12 @@ using System.Drawing;
 using Foundation;
 using UIKit;
 using Xuni.iOS.FlexGrid;
+using CoreGraphics;
 using Xuni.iOS.Core;
 
 namespace FlexGridSample
 {
-    public partial class RootViewController : UIViewController
+	public partial class RootViewController : UIViewController, IFlexGridDelegate
     {
         static bool UserInterfaceIdiomIsPhone
         {
@@ -29,6 +30,20 @@ namespace FlexGridSample
 
         #region View lifecycle
 
+		public Column ColumnByBinding(FlexGrid grid, string binding)
+		{
+			for (nuint i = 0; i < grid.Columns.Count; i++) {
+
+				Column col = grid.Columns.GetItem<Column> (i);
+
+				if (col.Binding == binding) {
+					return col;
+				}
+			}
+
+			return null;
+		}
+
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
@@ -38,9 +53,12 @@ namespace FlexGridSample
             FlexGrid grid = new FlexGrid();
             grid.Tag = 1;
             grid.ItemsSource = Customer.GetCustomerList(50);
-            Column c1 = grid.Columns.GetItem<Column>(0);
+
+			grid.WeakDelegate = this;
+
+			Column c1 = ColumnByBinding(grid, "Money");
             c1.Format = "c";
-            Column c2 = grid.Columns.GetItem<Column>(1);
+			Column c2 = ColumnByBinding(grid, "Hired");
             c2.Format = "MM/dd/yyyy";
             grid.HeadersVisibility = FlexHeadersVisibility.FlexHeadersVisibilityColumn;
 
@@ -49,8 +67,6 @@ namespace FlexGridSample
                 starSizingForEditing(grid);
             }
 
-            grid.WeakDelegate = this;
-            //grid.FormatItem  += grid_FormatItem;
             View.AddSubview(grid);
         }
         public override void ViewDidLayoutSubviews()
@@ -61,7 +77,7 @@ namespace FlexGridSample
         }
         private void starSizingForEditing(FlexGrid g)
         {
-            for (nuint i = 0; i < g.Columns.Count; i++)
+			for (nuint i = 0; i < g.Columns.Count; i++)
             {
                 Column col = g.Columns.GetItem<Column>(i);
                 col.WidthType = FlexColumnWidth.FlexColumnWidthStar;
@@ -93,17 +109,18 @@ namespace FlexGridSample
         {
             base.ViewDidDisappear(animated);
         }
-        [Export("prepareCellForEdit:")]
-        public void PrepareCellForEdit(FlexCellRangeEventArgs args)
+
+		public bool PrepareCellForEdit(FlexGrid sender, GridPanel panel, CellRange range)
         {
+
             FlexGrid g = (FlexGrid)View.ViewWithTag(1);
-            nuint i = (nuint)args.Col;
+            nuint i = (nuint)range.Col;
             Column col = g.Columns.GetItem<Column>(i);
             if (col.Binding == "Hired")
             {
                 UITextField editor = (UITextField)g.ActiveEditor;
                 UIDatePicker picker = new UIDatePicker();
-                NSDate d = (NSDate)g.GetCellData(args.Row, args.Col, false);
+				NSDate d = (NSDate)g.GetCellData(range.Row, range.Col, false);
                 picker.Opaque = true;
                 picker.Mode = UIDatePickerMode.Date;
                 picker.Date = d;
@@ -119,6 +136,8 @@ namespace FlexGridSample
                 editor.InputAccessoryView = toolbar;
                 editor.ClearButtonMode = UITextFieldViewMode.Never;
             }
+
+			return false;
         }
 
         void picker_EditingDidEnd(object sender, EventArgs e)
@@ -139,36 +158,41 @@ namespace FlexGridSample
             df.DateFormat = "M/dd/yy";
             editor.Text = df.ToString(((UIDatePicker)(sender)).Date);
         }
-        [Export("formatItem:")]
-        public void FormatItem(FlexFormatItemEventArgs args)
+
+		public bool FormatItem(FlexGrid sender,GridPanel panel, CellRange range, CGContext context)
         {
             FlexGrid g = (FlexGrid)View.ViewWithTag(1);
-            nuint i = (nuint)args.Col;
+            nuint i = (nuint)range.Col;
             Column col = g.Columns.GetItem<Column>(i);
             if (col.Binding == "Money")
             {
                 NSNumberFormatter f = new NSNumberFormatter();
                 f.NumberStyle = NSNumberFormatterStyle.Currency;
+
+				Console.WriteLine (g.GetCellData(range.Row, range.Col, true));
+
                 NSNumber n;
                 try
                 {
-                    n = (NSNumber)g.GetCellData(args.Row, args.Col, false);
+					n = (NSNumber)g.GetCellData(range.Row, range.Col, false);
                 }
                 catch
                 {
-                    n = f.NumberFromString((NSString)g.GetCellData(args.Row, args.Col, false));
+					n = f.NumberFromString(g.GetCellData(range.Row, range.Col, true).ToString());
                 }
-                CoreGraphics.CGRect r = args.Panel.GetCellRect(args.Row, args.Col);
+				CoreGraphics.CGRect r = panel.GetCellRect(range.Row, range.Col);
                 if (n.Int32Value > 90)
                 {
-                    args.Context.SetFillColor(UIColor.Green.CGColor);
+                    context.SetFillColor(UIColor.Green.CGColor);
                 }
                 else if (n.Int32Value < 60)
                 {
-                    args.Context.SetFillColor(UIColor.Red.CGColor);
+                    context.SetFillColor(UIColor.Red.CGColor);
                 }
-                args.Context.FillRect(r);
+                context.FillRect(r);
             }
+
+			return false;
         }
         #endregion
     }

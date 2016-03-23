@@ -63,7 +63,7 @@ namespace FlexGridSample
         public NSDate iOSHired { get; set; }
 
         [Export("Money")]
-        public NSNumber Money { get; set; }
+        public double Money { get; set; }
 
         #endregion
         #region ** implementation
