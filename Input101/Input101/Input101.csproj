@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{8A394D3A-CE54-465B-BADC-D8757A15FC5F}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Input101</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>Input101</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>i386</MtouchArch>
+    <MtouchLink>None</MtouchLink>
+    <MtouchUseRefCounting>true</MtouchUseRefCounting>
+    <MtouchUseSGen>true</MtouchUseSGen>
+    <MtouchFastDev>true</MtouchFastDev>
+    <MtouchDebug>true</MtouchDebug>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchProfiling>true</MtouchProfiling>
+    <MtouchSdkVersion>
+    </MtouchSdkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchFloat32>true</MtouchFloat32>
+    <MtouchUseSGen>true</MtouchUseSGen>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchUseRefCounting>true</MtouchUseRefCounting>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>i386</MtouchArch>
+    <MtouchLink>None</MtouchLink>
+    <MtouchUseRefCounting>true</MtouchUseRefCounting>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchUseSGen>true</MtouchUseSGen>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchFloat32>true</MtouchFloat32>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <DeviceSpecificBuild>true</DeviceSpecificBuild>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchUseSGen>true</MtouchUseSGen>
+    <MtouchUseRefCounting>true</MtouchUseRefCounting>
+    <MtouchProfiling>true</MtouchProfiling>
+    <IpaPackageName>
+    </IpaPackageName>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="Xuni.iOS.Calendar">
+      <HintPath>..\packages\Xuni.iOS.Calendar.2.3.20162.111\lib\Xamarin.iOS10\Xuni.iOS.Calendar.dll</HintPath>
+    </Reference>
+    <Reference Include="Xuni.iOS.Core">
+      <HintPath>..\packages\Xuni.iOS.Core.2.3.20162.111\lib\Xamarin.iOS10\Xuni.iOS.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xuni.iOS.Input">
+      <HintPath>..\packages\Xuni.iOS.Input.2.3.20162.111\lib\Xamarin.iOS10\Xuni.iOS.Input.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="Resources\LaunchScreen.xib" />
+    <InterfaceDefinition Include="Main.storyboard" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+    <None Include="Entitlements.plist" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="Samples\AutoCompleteController.cs" />
+    <Compile Include="Samples\AutoCompleteController.designer.cs">
+      <DependentUpon>AutoCompleteController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\ComboBoxController.cs" />
+    <Compile Include="Samples\ComboBoxController.designer.cs">
+      <DependentUpon>ComboBoxController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\DropDownController.cs" />
+    <Compile Include="Samples\DropDownController.designer.cs">
+      <DependentUpon>DropDownController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\MaskedInputController.cs" />
+    <Compile Include="Samples\MaskedInputController.designer.cs">
+      <DependentUpon>MaskedInputController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RootViewController.cs" />
+    <Compile Include="RootViewController.designer.cs">
+      <DependentUpon>RootViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainSampleMenuTableViewController.cs" />
+    <Compile Include="MainSampleMenuTableViewController.designer.cs">
+      <DependentUpon>MainSampleMenuTableViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="License.cs" />
+    <Compile Include="DemoData.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <ItemGroup>
+    <BundleResource Include="Resources\Default-568h%402x.png" />
+    <BundleResource Include="Resources\Default-Portrait.png" />
+    <BundleResource Include="Resources\Default-Portrait%402x.png" />
+    <BundleResource Include="Resources\Default.png" />
+    <BundleResource Include="Resources\Default%402x.png" />
+    <BundleResource Include="Resources\Icon-60%402x.png" />
+    <BundleResource Include="Resources\Icon-76.png" />
+    <BundleResource Include="Resources\Icon-76%402x.png" />
+    <BundleResource Include="Resources\Icon-Small-40.png" />
+    <BundleResource Include="Resources\Icon-Small-40%402x.png" />
+    <BundleResource Include="Resources\Icon-Small.png" />
+    <BundleResource Include="Resources\Icon-Small%402x.png" />
+    <BundleResource Include="Resources\input_autocomplete.png" />
+    <BundleResource Include="Resources\input_combobox.png" />
+    <BundleResource Include="Resources\input_dropdown.png" />
+    <BundleResource Include="Resources\input_mask.png" />
+    <BundleResource Include="Resources\XuniSampleDescriptor.xml" />
+    <BundleResource Include="Resources\Images\Australia.png" />
+    <BundleResource Include="Resources\Images\Bangladesh.png" />
+    <BundleResource Include="Resources\Images\Brazil.png" />
+    <BundleResource Include="Resources\Images\calendar.png" />
+    <BundleResource Include="Resources\Images\Canada.png" />
+    <BundleResource Include="Resources\Images\China.png" />
+    <BundleResource Include="Resources\Images\France.png" />
+    <BundleResource Include="Resources\Images\Germany.png" />
+    <BundleResource Include="Resources\Images\India.png" />
+    <BundleResource Include="Resources\Images\input_autocomplete.png" />
+    <BundleResource Include="Resources\Images\input_combobox.png" />
+    <BundleResource Include="Resources\Images\input_dropdown.png" />
+    <BundleResource Include="Resources\Images\input_mask.png" />
+    <BundleResource Include="Resources\Images\Japan.png" />
+    <BundleResource Include="Resources\Images\Nepal.png" />
+    <BundleResource Include="Resources\Images\Pakistan.png" />
+    <BundleResource Include="Resources\Images\Srilanka.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Samples\" />
+    <Folder Include="Resources\Images\" />
+    <Folder Include="Properties\" />
+  </ItemGroup>
+</Project>

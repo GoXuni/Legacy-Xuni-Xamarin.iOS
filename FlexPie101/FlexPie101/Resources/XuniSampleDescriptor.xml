@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ArrayOfSample xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Sample>
+    <Title>Getting Started</Title>
+    <Description>Shows a simple pie chart with tooltips</Description>
+    <Image>Images/pie.png</Image>
+    <StoryboardID>GettingStarted</StoryboardID>
+  </Sample>
+
+  <Sample>
+    <Title>Basic Features</Title>
+    <Description>Shows inner radius, offset, and start angle</Description>
+    <Image>Images/pie_doughnut.png</Image>
+    <StoryboardID>BasicFeatures</StoryboardID>
+  </Sample>
+
+  <Sample>
+    <Title>Legend and Titles</Title>
+    <Description>Shows basic header, footer, and legend positioning</Description>
+    <Image>Images/pie_labels.png</Image>
+    <StoryboardID>LegendTitles</StoryboardID>
+  </Sample>
+
+  <Sample>
+    <Title>Selection Sample</Title>
+    <Description>Shows selection animation, offset, and position</Description>
+    <Image>Images/pie.png</Image>
+    <StoryboardID>SelectionSample</StoryboardID>
+  </Sample>
+
+  <Sample>
+    <Title>Theming</Title>
+    <Description>Shows available palettes</Description>
+    <Image>Images/themes.png</Image>
+    <StoryboardID>Theming</StoryboardID>
+  </Sample>
+
+  <Sample>
+    <Title>Snapshot</Title>
+    <Description>Shows how to export an image of FlexPie</Description>
+    <Image>Images/pie.png</Image>
+    <StoryboardID>Snapshot</StoryboardID>
+  </Sample>
+
+</ArrayOfSample>

@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ArrayOfSample xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Sample>
+		<Title>Getting Started</Title>
+		<Description>Display, edit and aggregate your data all at once with FlexGrid</Description>
+		<Image>Images/flexgrid.png</Image>
+		<StoryboardID>GettingStarted</StoryboardID>
+	</Sample>
+	<Sample>
+		<Title>Column Definitions</Title>
+		<Description>Shows how to specify and format columns</Description>
+		<Image>Images/flexgrid_columns.png</Image>
+		<StoryboardID>ColumnDefinitions</StoryboardID>
+	</Sample>
+	<Sample>
+		<Title>Selection Modes</Title>
+		<Description>Shows the various cell selection modes</Description>
+		<Image>Images/flexgrid_selection.png</Image>
+		<StoryboardID>SelectionModes</StoryboardID>
+	</Sample>
+	<Sample>
+		<Title>Edit Confirmation</Title>
+		<Description>Shows how to prompt the user with a confirmation dialog before committing changes to a cell</Description>
+		<Image>Images/flexgrid.png</Image>
+		<StoryboardID>EditConfirmation</StoryboardID>
+	</Sample>
+	<Sample>
+		<Title>Editing Form</Title>
+		<Description>Edit cells by input form rather than inline</Description>
+		<Image>Images/input_form.png</Image>
+		<StoryboardID>EditingForm</StoryboardID>
+	</Sample>
+	<Sample>
+		<Title>Conditional Formatting</Title>
+		<Description>Uses a CellFactory to apply conditional formatting</Description>
+		<Image>Images/flexgrid.png</Image>
+		<StoryboardID>ConditionalFormatting</StoryboardID>
+	</Sample>
+	<Sample>
+		<Title>Custom Cells</Title>
+		<Description>Customizes a cell by displaying a numeric value in a gauge</Description>
+		<Image>Images/flexgrid_freezing.png</Image>
+		<StoryboardID>CustomCells</StoryboardID>
+	</Sample>
+	<Sample>
+		<Title>Grouping</Title>
+		<Description>Groups and aggregates a collection</Description>
+		<Image>Images/flexgrid_grouping.png</Image>
+		<StoryboardID>Grouping</StoryboardID>
+	</Sample>
+	<Sample>
+		<Title>Row Details</Title>
+		<Description>Expand and collapse row details</Description>
+		<Image>Images/flexgrid_custom.png</Image>
+		<StoryboardID>RowDetails</StoryboardID>
+	</Sample>
+	<Sample>
+		<Title>Filter</Title>
+		<Description>Filters the data by columns through a generated form</Description>
+		<Image>Images/flexgrid_filter.png</Image>
+		<StoryboardID>Filter</StoryboardID>
+	</Sample>
+	<Sample>
+		<Title>Full Text Filter</Title>
+		<Description>Filters and highlights the data across all columns</Description>
+		<Image>Images/filter.png</Image>
+		<StoryboardID>FullTextFilter</StoryboardID>
+	</Sample>
+	<Sample>
+		<Title>Column Layout</Title>
+		<Description>Shows a custom column manager to modify column layout</Description>
+		<Image>Images/flexgrid_columns.png</Image>
+		<StoryboardID>ColumnLayout</StoryboardID>
+	</Sample>
+	<Sample>
+		<Title>Star Sizing</Title>
+		<Description>Rotate the device to see star-sizing in action</Description>
+		<Image>Images/flexgrid.png</Image>
+		<StoryboardID>StarSizing</StoryboardID>
+	</Sample>
+	<Sample>
+		<Title>Cell Freezing&amp;Merging</Title>
+		<Description>Shows frozen columns, rows and cell merging</Description>
+		<Image>Images/flexgrid_freezing.png</Image>
+		<StoryboardID>FreezingMerging</StoryboardID>
+	</Sample>
+	<Sample>
+		<Title>Custom Merging</Title>
+		<Description>Shows a grid with custom cell merging</Description>
+		<Image>Images/flexgrid_merging.png</Image>
+		<StoryboardID>CustomMerging</StoryboardID>
+	</Sample>
+	<Sample>
+		<Title>Unbound</Title>
+		<Description>Add empty rows and columns to create an unbound grid</Description>
+		<Image>Images/flexgrid_headers.png</Image>
+		<StoryboardID>Unbound</StoryboardID>
+	</Sample>
+	<Sample>
+		<Title>On Demand</Title>
+		<Description>Load items on demand as the user scrolls down the grid</Description>
+		<Image>Images/flexgrid_loading.png</Image>
+		<StoryboardID>OnDemand</StoryboardID>
+	</Sample>
+</ArrayOfSample>

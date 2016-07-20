@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ArrayOfSample xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Sample>
+		<Title>Getting Started</Title>
+		<Description>Shows a basic calendar with selection and interaction</Description>
+		<Image>Images/calendar.png</Image>
+		<StoryboardID>GettingStarted</StoryboardID>
+	</Sample>
+	<Sample>
+		<Title>Vertical Orientation</Title>
+		<Description>Shows a calendar with vertical navigation/scrolling</Description>
+		<Image>Images/calendar_vertical.png</Image>
+		<StoryboardID>VerticalOrientation</StoryboardID>
+	</Sample>
+	<Sample>
+		<Title>Custom Day Content</Title>
+		<Description>Shows how to customize a day slot to show custom content</Description>
+		<Image>Images/calendar2.png</Image>
+		<StoryboardID>CustomDay</StoryboardID>
+	</Sample>
+	<Sample>
+		<Title>Custom Header</Title>
+		<Description>Shows a custom header inspired by a popular Android or iOS calendar app</Description>
+		<Image>Images/calendar.png</Image>
+		<StoryboardID>CustomHeader</StoryboardID>
+	</Sample>
+	<Sample>
+		<Title>Custom Appearance</Title>
+		<Description>Shows a calendar with a custom style</Description>
+		<Image>Images/calendar.png</Image>
+		<StoryboardID>CustomAppearance</StoryboardID>
+	</Sample>
+	<Sample>
+		<Title>Popup Editor</Title>
+		<Description>Shows how to use the control as a pop-up date selector</Description>
+		<Image>Images/calendar_datepicker.png</Image>
+		<StoryboardID>PopupEditor</StoryboardID>
+	</Sample>
+	<Sample>
+		<Title>Custom Selection</Title>
+		<Description>Shows custom selection scenarios</Description>
+		<Image>Images/calendar2.png</Image>
+		<StoryboardID>CustomSelection</StoryboardID>
+	</Sample>
+</ArrayOfSample>
